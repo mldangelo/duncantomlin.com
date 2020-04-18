@@ -1,0 +1,6 @@
+{
+	"extends": [
+		"xo/esnext",
+		"xo-react"
+	]
+}
