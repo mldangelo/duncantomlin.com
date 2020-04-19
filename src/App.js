@@ -1,18 +1,32 @@
 import React from 'react';
-import logo from './static/gifs/skateboard.gif';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
+} from 'react-router-dom';
+import Index from './pages/Index';
+import About from './pages/About';
+
 import './App.css';
 
-function App() {
-	return (
-		<div className="">
-			<header className="">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-          Welcome to Duncan Tomlin <code>.com</code>
-				</p>
-			</header>
-		</div>
-	);
-}
+const Nav = () => (
+	<nav>
+		<ul>
+			<li><Link to="/">Home</Link></li>
+			<li><Link to="/about">About</Link></li>
+		</ul>
+	</nav>
+);
+
+const App = () => (
+	<Router>
+		<Nav/>
+		<Switch>
+			<Route path="/" exact><Index /></Route>
+			<Route path="/about"><About /></Route>
+		</Switch>
+	</Router>
+);
 
 export default App;

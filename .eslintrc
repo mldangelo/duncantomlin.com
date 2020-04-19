@@ -1,6 +1,12 @@
 {
 	"extends": [
 		"xo/esnext",
-		"xo-react"
+		"xo-react/space"
+	],
+	"unicorn/filename-case": [
+		"error",
+		{
+			"case": "pascalCase"
+		}
 	]
 }

@@ -1,1 +1,7 @@
-{ "envs": ["browser"] }
+{ 
+    "envs": ["browser"],
+    "ignores": [
+        "docs"
+    ]
+}
+
