@@ -5,8 +5,12 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+
 import Index from './pages/Index';
 import About from './pages/About';
+import Closed from './pages/Closed';
+
+import Favicon from './components/favicon';
 
 import './App.css';
 
@@ -21,10 +25,12 @@ const Nav = () => (
 
 const App = () => (
   <Router>
+    <Favicon />
     <Nav />
     <Switch>
       <Route path="/" exact><Index /></Route>
       <Route path="/about"><About /></Route>
+      <Route path="/come-back-later"><Closed /></Route>
     </Switch>
   </Router>
 );
