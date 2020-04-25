@@ -16,7 +16,7 @@ const App = () => (
       <Route path="/" exact><Index /></Route>
       <Route path="/about"><About /></Route>
       <Route path="/come-back-later"><Closed /></Route>
-      <Route status={404}><NotFound/></Route>
+      <Route status={404}><NotFound /></Route>
     </Switch>
   </Router>
 );

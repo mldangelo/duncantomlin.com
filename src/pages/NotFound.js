@@ -3,7 +3,7 @@ import logo from '../static/gifs/static.gif';
 
 const NotFound = () => (
   <>
-     <img src={logo} className="static" alt="static"/>
+    <img src={logo} className="static" alt="static" />
   </>
 );
 

@@ -6,7 +6,7 @@ const About = () => (
 
   <Template>
     <Iframe
-      url="/about.html"
+      url="/about-raw.html"
       width="100%"
       height="1000px"
       display="initial"
