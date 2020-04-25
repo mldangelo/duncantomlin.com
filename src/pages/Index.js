@@ -1,7 +1,9 @@
 import React from 'react';
+import Template from '../components/template';
 import logo from '../static/gifs/skateboard.gif';
 
 const Index = () => (
+  <Template>
   <div className="">
     <header className="">
       <img src={logo} className="App-logo" alt="logo" />
@@ -15,6 +17,7 @@ const Index = () => (
       </p>
     </header>
   </div>
+  </Template>
 );
 
 export default Index;

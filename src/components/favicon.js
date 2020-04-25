@@ -1,5 +1,6 @@
 import React from 'react';
 import Favicon from 'react-favicon';
+// NOTE: The above library is so dumb
 
 import logo00 from '../static/favicon/frame_00.png';
 import logo01 from '../static/favicon/frame_01.png';
@@ -18,28 +19,30 @@ import logo13 from '../static/favicon/frame_13.png';
 import logo14 from '../static/favicon/frame_14.png';
 import logo15 from '../static/favicon/frame_15.png';
 
+const frames = [
+  logo00,
+  logo01,
+  logo02,
+  logo03,
+  logo04,
+  logo05,
+  logo06,
+  logo07,
+  logo08,
+  logo09,
+  logo10,
+  logo11,
+  logo12,
+  logo13,
+  logo14,
+  logo15,
+];
+
 const Fav = () => (
-      <Favicon url={[
-        logo00,
-        logo01,
-        logo02,
-        logo03,
-        logo04,
-        logo05,
-        logo06,
-        logo07,
-        logo08,
-        logo09,
-        logo10,
-        logo11,
-        logo12,
-        logo13,
-        logo14,
-        logo15,
-      ]}
-      animationDelay={8}
-      />
-  );
-  
-  export default Fav;
-  
+  <Favicon
+    url={frames}
+    animationDelay={8}
+  />
+);
+
+export default Fav;
