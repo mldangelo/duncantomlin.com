@@ -12,7 +12,6 @@
     "react-iframe": "^1.8.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "react-sound": "^1.2.0",
     "to-zalgo": "^1.0.1"
   },
   "scripts": {
@@ -47,5 +46,6 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "react-snap": "^1.23.0"
-  }
+  },
+  "homepage": "https://duncantomlin.com/"
 }

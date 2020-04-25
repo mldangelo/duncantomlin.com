@@ -1,21 +1,25 @@
-import React from 'react';
-import ReactSound from 'react-sound';
+import React, { useEffect, useRef } from 'react';
 import logo from '../static/gifs/static.gif';
 
-const Sound = ReactSound.default;
+const NotFound = () => {
+  const audioRef = useRef();
 
-const NotFound = () => (
-  <>
-    <ReactSound 
-        url="/static.m4a"
-        autoLoad
-        playStatus="PLAYING"
+  useEffect(() => {
+    const timer = setTimeout(() => audioRef.current.play(), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  return (
+    <>
+      <audio
+        src="/static.m4a"
+        ref={audioRef}
         loop
-        playbackRate={1}
-        playFromPosition={500}
-    />
-    <img src={logo} className="static" alt="static" />
-  </>
-);
+      />
+      <img src={logo} className="static" alt="static" />
+    </>
+  );
+};
 
 export default NotFound;

@@ -7,7 +7,7 @@ import isOpen from '../utils/isOpen';
 
 const About = () => (!isOpen() ? (
   <>
-      <Helmet title="Please come back later"/>
+    <Helmet title="Please come back later" />
     <h1>We are closed. Please come back later</h1>
     <h1>We are closed. Please come back later</h1>
     <h1>We are closed. Please come back later</h1>
