@@ -1,5 +1,5 @@
 import React from 'react';
-import {hydrate, render} from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -7,16 +7,18 @@ import * as serviceWorker from './serviceWorker';
 const rootElement = document.querySelector('#root');
 
 if (rootElement.hasChildNodes()) {
-	hydrate(
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>, rootElement);
+  hydrate(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>, rootElement,
+  );
 } else {
-	render(
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>,
-		rootElement);
+  render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    rootElement,
+  );
 }
 
 // If you want your app to work offline and load faster, you can change
