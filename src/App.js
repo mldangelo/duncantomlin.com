@@ -8,6 +8,7 @@ import {
 import Index from './pages/Index';
 import About from './pages/About';
 import Closed from './pages/Closed';
+import NotFound from './pages/NotFound';
 
 const App = () => (
   <Router>
@@ -15,6 +16,7 @@ const App = () => (
       <Route path="/" exact><Index /></Route>
       <Route path="/about"><About /></Route>
       <Route path="/come-back-later"><Closed /></Route>
+      <Route status={404}><NotFound/></Route>
     </Switch>
   </Router>
 );
