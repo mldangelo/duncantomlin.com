@@ -29,7 +29,7 @@ const Closed = () => {
     <>
       <Helmet title={messages[messages.length - 1]} />
       {messages.map((x, i) => <h1 key={`${i}${x}`}>{x}</h1>)}
-      <p>{zalgo('Whomst awakened the ancient one')}</p>
+      <p className="shake-opacity shake-constant">{zalgo('Whomst awakened the ancient one')}</p>
       <h1>We are closed. Please come back later.</h1>
       <h6>Normal website hours are 9 AM - 5 PM ET M-F.</h6>
     </>

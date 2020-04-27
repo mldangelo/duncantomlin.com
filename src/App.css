@@ -44,3 +44,5 @@
   overflow: hidden;
   position: fixed;
 }
+
+@import "../node_modules/csshake/dist/csshake.min.css";

@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "csshake": "^1.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-favicon": "0.0.18",
@@ -36,7 +37,10 @@
     ]
   },
   "reactSnap": {
-    "include" : ["/", "/about"]
+    "include": [
+      "/",
+      "/about"
+    ]
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.29.0",
