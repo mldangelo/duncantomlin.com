@@ -25,7 +25,7 @@ const NotFound = ({ staticContext = {} }) => {
       <Helmet title="404 - Duncan Not Found" />
       {
         showWarning ? (
-        <h2 className="shake-little shake-constant">There is nothing for you here. You are not welcome here. Do not stay.</h2>
+          <h2 className="shake-little shake-constant">There is nothing for you here. You are not welcome here. Do not stay.</h2>
         ) : <></>
       }
       <audio
