@@ -18,8 +18,7 @@
     "start": "react-scripts start",
     "lint": "eslint src/",
     "build": "rm -rf build/ && react-scripts build",
-    "postbuild": "react-snap && cp CNAME build/",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && react-snap",
     "deploy": "gh-pages -d build && rm -rf build/"
   },
   "eslintConfig": {
