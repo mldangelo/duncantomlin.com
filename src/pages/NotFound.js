@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
+
 import logo from '../static/gifs/static.gif';
 
-const NotFound = () => {
+const NotFound = ({ staticContext = {} }) => {
   const audioRef = useRef();
 
   useEffect(() => {
@@ -9,9 +11,11 @@ const NotFound = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  staticContext.status = 404;
 
   return (
     <>
+      <Helmet title="404 - Duncan Not Found" />
       <audio
         src="/static.m4a"
         ref={audioRef}

@@ -3,6 +3,9 @@
 .DS_Store
 ~$*
 
+# build related
+/build
+
 # Logs
 logs
 *.log
