@@ -1,29 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import zalgo from 'to-zalgo';
 import isOpen from '../utils/isOpen';
-
-function useInterval(callback, delay) {
-  const savedCallback = useRef();
-
-  // Remember the latest callback.
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  // Set up the interval.
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      const id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-}
+import useInterval from '../utils/useInterval';
 
 const originalMessage = 'We are closed. Please come back later.';
 const corrupt = (strs) => {
@@ -46,7 +27,7 @@ const Closed = () => {
 
   return (!isOpen() ? (
     <>
-      <Helmet title="Please come back later" />
+      <Helmet title={messages[messages.length - 1]} />
       {messages.map((x) => <h1>{x}</h1>)}
       <p>{zalgo('Whomst awakened the ancient one')}</p>
       <h1>We are closed. Please come back later.</h1>
