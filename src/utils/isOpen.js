@@ -4,7 +4,7 @@ const isOpen = () => {
   const n = d.getDay();
   if (n === 0 || n === 6) return false;
   const h = d.getUTCHours();
-  if (h < 13 || h > 21) return false;
+  if (h < 13 || h >= 21) return false;
   return true;
 };
 
