@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import '../static/styles/404.scss';
 
 import logo from '../static/gifs/static.gif';
 

@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+// Set your brand colors
+$purple: rgb(227, 255, 66);
+$pink: rgb(212, 29, 136);
+$beige-lighter: rgb(255, 255, 255);
+
+// Update Bulma's global variables
+$family-sans-serif: Lora;
+$primary: $purple;
+$link: $pink;
+
+$body-font-size: 2em;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// closing soon bar
+$progress-border-radius: 0;
+
+// Import only what you need from Bulma
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/progress.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/layout/section.sass";
+
+
+@import "~csshake/dist/csshake.min.css";

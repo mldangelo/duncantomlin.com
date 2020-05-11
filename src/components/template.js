@@ -6,8 +6,6 @@ import Nav from './nav';
 import Close from './close';
 import ClosingSoon from './closingSoon';
 
-import '../App.css';
-
 const Template = ({ children, ...rest }) => (
   <>
     <Close />

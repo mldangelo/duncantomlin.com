@@ -10,5 +10,5 @@ const isOpen = () => {
 
 const invert = () => !isOpen();
 
-export { isOpen as default, invert };
-// export { invert as default, isOpen };
+// export { isOpen as default, invert };
+export { invert as default, isOpen };
