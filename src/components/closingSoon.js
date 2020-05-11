@@ -24,7 +24,7 @@ const ClosingSoon = () => {
   const seconds = secondsToClose - minutes * 60;
   const progressClass = secondsToClose > 300 ? 'is-warning' : 'is-danger';
   return (
-    secondsToClose <= 1800 & secondsToClose != 0
+    secondsToClose <= 1800 && secondsToClose !== 0
       ? (
         <>
           <progress className={`progress ${progressClass} is-large`} value={Math.min(1800, secondsToClose)} max="1800">
