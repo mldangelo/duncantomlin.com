@@ -1,20 +1,22 @@
-
-.App-logo {
-    height: 40vw;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 10s ease;
+img {
+    .skateboard {
+        height: 500px;
+        width: 500px;
+        pointer-events: none;
     }
-}
-
-@keyframes App-logo-spin {
-from {
-    transform: rotate(0deg);
-}
-to {
-    transform: rotate(360deg);
-}
+    
+    @media (prefers-reduced-motion: no-preference) {
+        .skateboard {
+            animation: skateboard-spin infinite 10s ease;
+        }
+    }
+    
+    @keyframes skateboard-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }    
 }
