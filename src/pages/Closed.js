@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import zalgo from 'to-zalgo';
 import isOpen from '../utils/isOpen';
 import useInterval from '../utils/useInterval';
 
@@ -28,8 +27,7 @@ const Closed = () => {
   return (!isOpen() ? (
     <>
       <Helmet title={messages[messages.length - 1]} />
-      {messages.map((x, i) => <h1 className="title is-3" key={`${i}${x}`}>{x}</h1>)}
-      <p className="shake-opacity shake-constant">{zalgo('Whomst awakened the ancient one')}</p>
+      {messages.map((x, i) => <h1 className="title" key={`${i}${x}`}>{x}</h1>)}
       <h1>We are closed. Please come back later.</h1>
       <h6>Normal website hours are 9 AM - 5 PM ET M-F.</h6>
     </>
