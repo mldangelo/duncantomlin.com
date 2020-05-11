@@ -4,16 +4,22 @@ import { Helmet } from 'react-helmet';
 import Favicon from './favicon';
 import Nav from './nav';
 import Close from './close';
+import ClosingSoon from './closingSoon';
 
 import '../App.css';
 
 const Template = ({ children, ...rest }) => (
   <>
     <Close />
+    <ClosingSoon />
     <Helmet titleTemplate="%s | Duncan Tomlin" defaultTitle="Duncan Tomlin" />
     <Favicon />
     <Nav />
-    {children}
+    <div className="container is-fluid">
+      <div className="content">
+        {children}
+      </div>
+    </div>
   </>
 );
 
