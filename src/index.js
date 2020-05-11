@@ -12,7 +12,7 @@ const Main = () => (
   </React.StrictMode>
 );
 
-const fac = () => rootElement.hasChildNodes() ? hydrate(<Main/>, rootElement) : render(<Main/>, rootElement);
+const fac = () => (rootElement.hasChildNodes() ? hydrate(<Main />, rootElement) : render(<Main />, rootElement));
 
 fac();
 

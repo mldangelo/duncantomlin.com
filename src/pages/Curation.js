@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Template from '../components/template';
 import raw from 'raw.macro';
+import Template from '../components/template';
 
 
 const markdown = raw('../markdown/Curation.md');
