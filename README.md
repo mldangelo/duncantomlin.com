@@ -7,7 +7,7 @@
 
 1. Add a bio
 2. SEO optimize
-2. Add a "In what context do you know Duncan?" question on the index - can be a text input or drop down. Build separates sites for: personal, professional, romantic, art, architecture, etc.
+2. Add a "In what context do you know Duncan?" question on the index - can be a text input or drop down. Build separates sites for: personal, professional, romantic, art, architecture, resturanteer, etc.
 
 ### Impose Constraints of Physical Reality 
 
