@@ -6,7 +6,7 @@ import Nav from './nav';
 import Close from './close';
 import ClosingSoon from './closingSoon';
 
-const Template = ({ children, ...rest }) => (
+const Template = ({ children }) => ( /* eslint-disable-line */
   <>
     <Close />
     <ClosingSoon />

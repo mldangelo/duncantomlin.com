@@ -11,7 +11,9 @@ const corrupt = (strs) => {
   const strIndex = Math.floor(Math.random() * Math.floor(strs.length));
   const str = strs[strIndex];
   const corruptIndex = Math.floor(Math.random() * Math.floor(str.length));
-  const corruptChar = String.fromCharCode(Math.max(0, Math.random() * str.charCodeAt(corruptIndex) * 2));
+  const corruptChar = String.fromCharCode(
+    Math.max(0, Math.random() * str.charCodeAt(corruptIndex) * 2),
+  );
   const newChar = Math.random() < 0.5 ? corruptChar : originalMessage[corruptIndex];
   const newStr = str.substr(0, corruptIndex) + newChar + str.substr(corruptIndex + 1);
   return strs.map((val, i) => (i === strIndex ? newStr : val));
@@ -27,7 +29,7 @@ const Closed = () => {
   return (!isOpen() ? (
     <>
       <Helmet title={messages[messages.length - 1]} />
-      {messages.map((x, i) => <h1 className="title" key={`${i}${x}`}>{x}</h1>)}
+      {messages.map((x, i) => <h1 className="title" key={`${i}${x}`}>{x}</h1>)} {/* eslint-disable-line */}
       <h1>We are closed. Please come back later.</h1>
       <h6>Normal website hours are 9 AM - 5 PM ET M-F.</h6>
     </>

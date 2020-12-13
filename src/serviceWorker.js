@@ -10,13 +10,14 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
 
+/* eslint-disable */
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost'
     // [::1] is the IPv6 localhost address.
     || window.location.hostname === '[::1]'
     // 127.0.0.0/8 are considered localhost for IPv4.
     || window.location.hostname.match(
-    	/^127(?:\.(?:25[0-5]|2[0-4]\d|[01]?\d{1,2})){3}$/,
+      /^127(?:\.(?:25[0-5]|2[0-4]\d|[01]?\d{1,2})){3}$/,
     ),
 );
 
@@ -140,3 +141,4 @@ export function unregister() {
       });
   }
 }
+/* eslint-enable */

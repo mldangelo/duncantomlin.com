@@ -1,7 +1,7 @@
 import React from 'react';
 import Template from '../components/template';
 import '../static/styles/main.scss';
-import logo from '../static/gifs/skateboard.gif';
+// import logo from '../static/gifs/skateboard.gif';
 
 const Index = () => (
   <Template>

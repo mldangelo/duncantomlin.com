@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import raw from 'raw.macro';
 import Template from '../components/template';
 
-
 const markdown = raw('../markdown/Curation.md');
 
 const Curation = () => (

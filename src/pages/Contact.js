@@ -1,8 +1,7 @@
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { importMDX } from 'mdx.macro';
 import Template from '../components/template';
 
-// const Content = lazy(() => importMDX('../markdown/Contact.mdx'));
 const Content = importMDX.sync('../markdown/Contact.mdx');
 
 const Page = () => (

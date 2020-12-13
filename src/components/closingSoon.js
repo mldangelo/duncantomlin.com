@@ -3,7 +3,6 @@ import dayjs from 'dayjs';
 
 import useInterval from '../utils/useInterval';
 
-
 const timeToClose = () => {
   const utcClosingHour = 21; // 5 PM EST
   const now = dayjs();

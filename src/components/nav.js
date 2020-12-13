@@ -17,7 +17,7 @@ const Nav = () => {
   return (
     <nav className="navbar" role="navigation">
       {links.map(({ path, title }) => (
-        <Link to={path} className={`navbar-item ${path === pathname ? 'is-active' : null}`}>{title}</Link>
+        <Link key={path} to={path} className={`navbar-item ${path === pathname ? 'is-active' : null}`}>{title}</Link>
       ))}
     </nav>
   );
