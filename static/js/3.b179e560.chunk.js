@@ -1,2 +1,0 @@
-(this["webpackJsonpduncantomlin.com"]=this["webpackJsonpduncantomlin.com"]||[]).push([[3],{160:function(n,e,t){"use strict";t.r(e);var a=t(59),c=t(1),o=t.n(c),m=t(9);e.default=function(n){var e=n.components;Object(a.a)(n,["components"]);return o.a.createElement(m.MDXTag,{name:"wrapper",components:e},o.a.createElement(m.MDXTag,{name:"h1",components:e},"Projects"))}}}]);
-//# sourceMappingURL=3.b179e560.chunk.js.map
