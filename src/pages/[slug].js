@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 
-// import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Template from '../components/template';
 

@@ -1,22 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-import ReactMarkdown from 'react-markdown';
-
-import Template from '../../components/template';
-
-const markdown = `
-New York is the city that never sleeps. 
-
-`;
-
-const StaticPage = () => (
-  <Template>
-    <ReactMarkdown source={markdown} escapeHtml={false} />
-  </Template>
-);
-/*
-
-// Component Closes
+import isOpen from '../../components/experiments/1/isOpen';
+import useInterval from '../../utils/useInterval';
+// Glitch
 const originalMessage = 'We are closed. Please come back later.';
 const corrupt = (strs) => {
   if (Math.random() < 0.75) return strs;
@@ -32,30 +20,26 @@ const corrupt = (strs) => {
     str.substr(0, corruptIndex) + newChar + str.substr(corruptIndex + 1);
   return strs.map((val, i) => (i === strIndex ? newStr : val));
 };
+
 const Closed = () => {
   const [messages, setMessage] = useState(
     [...Array(25)].map(() => originalMessage)
   );
-import { Redirect } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+
   useInterval(() => {
     setMessage(corrupt(messages));
   }, 10);
 
-import isOpen from '../../components/experiments/1/isOpen';
-import useInterval from '../../utils/useInterval';
-
   return !isOpen() ? (
     <>
       <Helmet title={messages[messages.length - 1]} />
-      {messages.map((x, i) => <h1 className="title" key={`${i}${x}`}>{x}</h1>)}
+      {messages.map((x, i) => <h1 className="title" key={`${i}${x}`}>{x}</h1>)} {/* eslint-disable-line */}
       <h1>We are closed. Please come back later.</h1>
       <h6>Normal website hours are 9 AM - 5 PM ET M-F.</h6>
     </>
   ) : (
     <Redirect to="/" />
   );
-}; 
-*/
+};
 
-export default StaticPage;
+export default Closed;

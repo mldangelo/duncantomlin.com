@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+// calls a function every X seconds
 function useInterval(callback, delay) {
   const savedCallback = useRef();
 

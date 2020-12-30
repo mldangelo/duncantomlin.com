@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import dayjs from 'dayjs';
+import moment from 'moment';
 
-import useInterval from '../utils/useInterval';
+import useInterval from '../../../utils/useInterval';
 
 const timeToClose = () => {
   const utcClosingHour = 21; // 5 PM EST
-  const now = dayjs();
+  const now = moment();
   const utcOffset = now.utcOffset() * 60; // UTC offset in seconds
-  const closing = dayjs()
+  const closing = moment()
     .millisecond(0)
     .second(0)
     .minute(0)
