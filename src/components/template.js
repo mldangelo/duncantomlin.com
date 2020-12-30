@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-// import Favicon from './favicon';     <Favicon />
-
 import Navigation from './navigation';
 
 const Template = ({ children }) => ( /* eslint-disable-line */
