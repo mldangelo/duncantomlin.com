@@ -1,8 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 // stolen from https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_document.js
 
-const GA_TRACKING_ID = process.env.GA_TRACKING_ID || 'UA-50035165-2';
+const REACT_APP_GA_TRACKING_ID =
+  process.env.REACT_APP_GA_TRACKING_ID || 'G-FN40R2YZXF';
 
+/* eslint-disable react/no-danger */
 export default class MyDocument extends Document {
   render() {
     return (
@@ -11,7 +13,7 @@ export default class MyDocument extends Document {
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${REACT_APP_GA_TRACKING_ID}`}
           />
           <script
             dangerouslySetInnerHTML={{
@@ -19,7 +21,7 @@ export default class MyDocument extends Document {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${GA_TRACKING_ID}', {
+              gtag('config', '${REACT_APP_GA_TRACKING_ID}', {
                 page_path: window.location.pathname,
               });
             `,
@@ -34,3 +36,4 @@ export default class MyDocument extends Document {
     );
   }
 }
+/* eslint-enable react/no-danger */

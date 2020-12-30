@@ -5,7 +5,6 @@ import { useRouter, withRouter } from 'next/router';
 const Nav = () => {
   const router = useRouter();
   const { asPath = '/' } = router.query; // TODO figure out why this doesn't work later
-  console.log(router);
 
   const startLinks = [{ path: '/', title: 'Duncan Tomlin' }];
   const endLinks = [{ path: '/contact', title: 'Contact' }];
@@ -16,7 +15,9 @@ const Nav = () => {
         <div className="navbar-start">
           {startLinks.map(({ path, title }) => (
             <Link key={path} href={path}>
-              <a className={`navbar-item${path === asPath ? ' is-active' : ''}`}>
+              <a
+                className={`navbar-item${path === asPath ? ' is-active' : ''}`}
+              >
                 {title}
               </a>
             </Link>

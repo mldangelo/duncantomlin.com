@@ -1,8 +1,8 @@
-const { NEXT_PUBLIC_TRACKING_ID } = process.env;
+const { REACT_APP_GA_TRACKING_ID } = process.env;
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url) => {
-  window.gtag('config', NEXT_PUBLIC_TRACKING_ID, {
+  window.gtag('config', REACT_APP_GA_TRACKING_ID, {
     page_path: url,
   });
 };
