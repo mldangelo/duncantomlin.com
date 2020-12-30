@@ -22,7 +22,7 @@
     "webpack": "^4.44.2"
   },
   "scripts": {
-    "dev": "next",
+    "start": "next",
     "build": "next build",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",

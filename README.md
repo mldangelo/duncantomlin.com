@@ -31,10 +31,6 @@ Modify the environmental variables and git remote url in [`.github/workflows/git
 
 Make a commit to `main` and push your changes. That's it.
 
-### Static Export
-
-To statically export the site without deploying to github pages, delete or disable `.github/workflows/github-pages.yml` and run `npm run predeploy`. This generates a static export of the website as `personal-site/build/`. Copy this and self-host or deploy to a CDN.
-
 ## Acknowledgements
 
 * Duncan acknowledges no-one.
