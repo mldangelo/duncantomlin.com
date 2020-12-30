@@ -3,21 +3,15 @@ import ReactMarkdown from 'react-markdown';
 import raw from 'raw.macro';
 import Template from '../components/template';
 
-const markdown = raw('../markdown/writing.md');
+const markdown = raw('../data/writing.md');
 
-const Curation = () => (
+const Writing = () => (
   <Template>
-    <section className="hero is-fullheight-with-navbar">
-      <div className="hero-body">
-        <div className="container content">
-          <ReactMarkdown
-            source={markdown}
-            escapeHtml={false}
-          />
-        </div>
-      </div>
-    </section>
+    <ReactMarkdown
+      source={markdown}
+      escapeHtml={false}
+    />
   </Template>
 );
 
-export default Curation;
+export default Writing;

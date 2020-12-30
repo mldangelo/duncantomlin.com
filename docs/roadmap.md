@@ -19,3 +19,7 @@
 1. Add fake advertisements that feature Duncan. Ideally as low quality gifs.
     - Ad a note about the importance of advertisements, and how people should contact you if they would like to be featured on your site.
 2. Whenever possible, use ~ circa 2000 web design principals - everything is a table - very little CSS
+
+## Other
+
+Content mutation - closed page mutates over time. How do we relate this to architecture?

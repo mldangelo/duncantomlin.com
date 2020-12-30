@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { importMDX } from 'mdx.macro';
 import Template from '../components/template';
 
-const Content = importMDX.sync('../markdown/Contact.mdx');
+const Content = importMDX.sync('../data/contact.mdx');
 
 const Page = () => (
   <Template>

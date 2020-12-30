@@ -3,11 +3,10 @@ import ReactMarkdown from 'react-markdown';
 import raw from 'raw.macro';
 import Template from '../components/template';
 
-const markdown = raw('../markdown/Curation.md');
+const markdown = raw('../data/columbia.md');
 
 const Curation = () => (
   <Template>
-    <h1>Curation</h1>
     <ReactMarkdown
       source={markdown}
       escapeHtml={false}
