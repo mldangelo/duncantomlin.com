@@ -1,8 +1,8 @@
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-import './static/styles/main.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './static/styles/main.scss';
 
 const rootElement = document.querySelector('#root');
 

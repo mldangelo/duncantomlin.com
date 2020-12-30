@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import '../static/styles/404.scss';
+// import '../static/styles/404.scss';
 
 import logo from '../static/gifs/static.gif';
 
-const NotFound = ({ staticContext = {} }) => {
+const NotFound = ({ staticContext = {} }) => { // eslint-disable-line react/prop-types
   staticContext.status = 404;
 
   const [showWarning, changeWarning] = useState(true);
