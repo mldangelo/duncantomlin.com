@@ -1,0 +1,21 @@
+import { useEffect } from 'react';
+import Router from 'next/router';
+import PropTypes from 'prop-types';
+import * as gtag from '../lib/gtag';
+import '../static/styles/main.scss';
+
+const App = ({ Component, pageProps }) => {
+  useEffect(() => {
+    const handleRouteChange = (url) => gtag.pageview(url);
+    Router.events.on('routeChangeComplete', handleRouteChange);
+    return () => Router.events.off('routeChangeComplete', handleRouteChange);
+  }, []);
+
+  return <Component {...pageProps} />;
+};
+
+App.propTypes = {
+  Component: PropTypes.func.isRequired,
+};
+
+export default App;

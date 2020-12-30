@@ -4,41 +4,37 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-regular-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "0.1.14",
-    "antd": "^4.9.4",
     "bulma": "^0.9.1",
-    "csshake": "^1.5.3",
     "dayjs": "^1.9.8",
-    "github-markdown-css": "^4.0.0",
-    "mdx.macro": "^0.2.9",
-    "mini.css": "^3.0.1",
+    "glob": "^7.1.6",
+    "next": "^10.0.4",
+    "next-seo": "^4.17.0",
     "node-sass": "^4.0.0",
     "prop-types": "^15.7.2",
     "raw.macro": "^0.4.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-favicon": "0.0.18",
-    "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
-    "react-iframe": "^1.8.0",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "to-zalgo": "^1.0.1"
+    "to-zalgo": "^1.0.1",
+    "webpack": "^4.44.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "lint": "eslint src/",
-    "build": "rm -rf build/ && react-scripts build",
-    "predeploy": "npm run build && react-snap",
-    "deploy": "gh-pages -d build",
+    "dev": "next",
+    "build": "next build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "export": "next export",
+    "predeploy": "rm -rf node_modules/.cache && npm run build && npm run export",
+    "deploy": "gh-pages -t true -d out && rm -rf out/",
     "analyze": "npm run build && source-map-explorer build/static/js/*.chunk.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "babel": {
+    "presets": [
+      "next/babel"
+    ]
   },
   "browserslist": {
     "production": [
@@ -52,26 +48,21 @@
       "last 1 safari version"
     ]
   },
-  "reactSnap": {
-    "include": [
-      "/",
-      "/about",
-      "/criticism",
-      "/curation",
-      "/creative-content",
-      "/projects",
-      "/contact"
-    ]
-  },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.16.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-nextjs": "^1.0.6",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-html": "^6.1.1",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-react": "^7.22.0",
-    "source-map-explorer": "^2.5.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.6",
+    "prettier": "^2.2.1",
     "gh-pages": "^3.1.0",
-    "react-snap": "^1.23.0"
+    "source-map-explorer": "^2.5.1"
   }
 }

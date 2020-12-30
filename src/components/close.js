@@ -11,7 +11,7 @@ const Close = () => {
     setOpen(isOpen());
   }, 5000);
 
-  return (currentlyOpen ? (<></>) : <Redirect to="/come-back-later" />);
+  return currentlyOpen ? <></> : <Redirect to="/come-back-later" />;
 };
 
 export default Close;

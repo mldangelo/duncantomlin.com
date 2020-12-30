@@ -1,11 +1,12 @@
 const routes = [
   {
-    label: 'I am an esteemed member of the admissions committee at Columbia GSAPP',
+    label:
+      'I am an esteemed member of the admissions committee at Columbia GSAPP',
     href: '/columbia-m-arch-application-materials',
     index: true,
   },
   {
-    label: 'We\'re dear friends',
+    label: "We're dear friends",
     href: '/posts',
     index: true,
   },
@@ -18,16 +19,14 @@ const routes = [
     label: 'As his reputation precedes him',
     href: '/professional-work',
     index: true,
-
   },
   {
     label: 'Romantic',
     href: '/maggie',
     index: true,
-
   },
   {
-    label: 'I don\'t',
+    label: "I don't",
     href: '/about',
     index: true,
   },

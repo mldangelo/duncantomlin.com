@@ -38,11 +38,6 @@ const frames = [
   logo15,
 ];
 
-const Fav = () => (
-  <Favicon
-    url={frames}
-    animationDelay={8}
-  />
-);
+const Fav = () => <Favicon url={frames} animationDelay={8} />;
 
 export default Fav;
