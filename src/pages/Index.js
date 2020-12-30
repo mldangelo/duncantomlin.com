@@ -4,16 +4,12 @@ import Template from '../components/template';
 
 const options = [
   {
-    label: 'I don\'t',
-    href: '/about',
+    label: 'I am an esteemed member of the admissions committee at Columbia GSAPP',
+    href: '/columbia-m-arch-application-materials',
   },
   {
     label: 'We\'re dear friends',
     href: '/posts',
-  },
-  {
-    label: 'I am an esteemed member of the admissions committee at Columbia GSAPP',
-    href: '/columbia-m-arch-application-materials',
   },
   {
     label: 'We will come to know each other as distribution partners',
@@ -26,6 +22,10 @@ const options = [
   {
     label: 'Romantic',
     href: '/maggie',
+  },
+  {
+    label: 'I don\'t',
+    href: '/about',
   },
 ];
 
