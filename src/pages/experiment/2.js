@@ -3,9 +3,8 @@ import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 
 import Template from '../../components/template';
-import isOpen from '../../components/experiments/1/isOpen';
 import useInterval from '../../utils/useInterval';
-// Glitch
+// replaces characters with underscores _
 const originalMessage = `
 # Decay
 
@@ -17,7 +16,7 @@ This study imagines what happen if 10% of other seemingly permanent fixtures dis
 TODO: Rewrite, add essay
 `;
 
-// Page heading -- look at Chrome Tab
+// Page heading -- look at Chrome Tab - this becomes corrupted over time.
 const originalHeading = 'Decay Study | Duncan Tomlin';
 
 const corrupt = (message, original) => {
@@ -49,15 +48,13 @@ const Decay = () => {
     setMessage(remove(message));
   }, 1000);
 
-  return isOpen() ? (
+  return (
     <>
       <Helmet title={heading} />
       <Template>
         <ReactMarkdown source={message} escapeHtml={false} />
       </Template>
     </>
-  ) : (
-    <></>
   );
 };
 

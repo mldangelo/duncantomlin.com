@@ -5,5 +5,5 @@ Thank you for visiting my website. I am applying to the [M.Arch](https://www.arc
 Please see [**my portfolio**](/m-arch-application-portfolio.pdf), [**architectural coursework**](/architecture), [**academic writing**](/writing), and [**curatorial work**](/curatorial-work).
 
 
-Please feel free to [**contact**](/contact) me with any questions about my work and experience ([resume (pdf)](/resume.pdf) and [LinkedIn](https://www.linkedin.com/in/duncan-tomlin-6342b05b/)).
+Please feel free to [**contact**](/contact) me with any questions about my work and experience ([resume pdf](/resume.pdf) and [LinkedIn](https://www.linkedin.com/in/duncan-tomlin-6342b05b/)).
 

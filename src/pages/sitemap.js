@@ -9,7 +9,9 @@ const StaticPage = ({ paths }) => (
     <ul>
       {paths.map((url) => (
         <li>
-          <a href={url}>{url}</a>
+          <a href={url} key={url}>
+            {url}
+          </a>
         </li>
       ))}
     </ul>

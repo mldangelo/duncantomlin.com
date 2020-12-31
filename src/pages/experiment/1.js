@@ -16,6 +16,17 @@ const StaticPage = () => (
 );
 /*
 
+  return isOpen() ? (
+    <>
+      <Helmet title={heading} />
+      <Template>
+        <ReactMarkdown source={message} escapeHtml={false} />
+      </Template>
+    </>
+  ) : (
+    <></>
+  );
+
 // Component Closes
 const originalMessage = 'We are closed. Please come back later.';
 const corrupt = (strs) => {
