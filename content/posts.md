@@ -4,4 +4,5 @@
 
 2020 was a terrible year. Here are some reflections.
 
-**NOTE** We can update this path `/posts` later if you would like to support more advanced formatting. 
+**NOTE** We can update this path `/posts` later if you would like to support more advanced formatting.
+

@@ -4,29 +4,16 @@ import Template from '../components/template';
 
 const routes = [
   {
-    label:
-      'I am an esteemed member of the admissions committee at Columbia GSAPP',
-    href: '/columbia-m-arch-application-materials',
+    label: 'Good',
+    href: '/reputation/good/',
   },
   {
-    label: "We're dear friends",
-    href: '/posts',
+    label: 'Bad',
+    href: '/reputation/bad',
   },
   {
-    label: 'We will come to know each other as distribution partners',
-    href: '/minetta-mizzenmast-and-west-12th-indies-nyc',
-  },
-  {
-    label: 'As his reputation precedes him',
-    href: '/which-reputation',
-  },
-  {
-    label: 'Romantic',
-    href: '/maggie',
-  },
-  {
-    label: "I don't",
-    href: '/about',
+    label: 'Action Sports',
+    href: '/reputation/action-sites',
   },
 ];
 
@@ -42,7 +29,7 @@ const Index = () => {
 
   return (
     <Template>
-      <h1 className="title">In what context do you know Duncan?</h1>
+      <h1 className="title">Which Reputation?</h1>
       <div className="field has-addons">
         <div className="control">
           <div className="select is-medium is-expanded is-link">

@@ -1,45 +1,64 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import ReactMarkdown from 'react-markdown';
 
+import Template from '../../components/template';
 import isOpen from '../../components/experiments/1/isOpen';
 import useInterval from '../../utils/useInterval';
 // Glitch
-const originalMessage = 'We are closed. Please come back later.';
-const corrupt = (strs) => {
-  if (Math.random() < 0.75) return strs;
-  const strIndex = Math.floor(Math.random() * Math.floor(strs.length));
-  const str = strs[strIndex];
-  const corruptIndex = Math.floor(Math.random() * Math.floor(str.length));
+const originalMessage = `
+# Decay
+
+Early in 2020, New York became the global epicenter of the Coronavirus Pandemic. 
+Hundreds of thousands of people fled and many thousands of small businesses closed. 
+
+This study imagines what happen if 10% of other seemingly permanent fixtures disappear.
+
+TODO: Rewrite, add essay
+`;
+
+// Page heading -- look at Chrome Tab
+const originalHeading = 'Decay Study | Duncan Tomlin';
+
+const corrupt = (message, original) => {
+  const corruptIndex = Math.floor(Math.random() * Math.floor(message.length));
   const corruptChar = String.fromCharCode(
-    Math.max(0, Math.random() * str.charCodeAt(corruptIndex) * 2)
+    Math.max(0, Math.random() * message.charCodeAt(corruptIndex) * 2)
   );
-  const newChar =
-    Math.random() < 0.5 ? corruptChar : originalMessage[corruptIndex];
-  const newStr =
-    str.substr(0, corruptIndex) + newChar + str.substr(corruptIndex + 1);
-  return strs.map((val, i) => (i === strIndex ? newStr : val));
+  const newChar = Math.random() < 0.5 ? corruptChar : original[corruptIndex];
+  return (
+    message.substr(0, corruptIndex) + newChar + message.substr(corruptIndex + 1)
+  );
 };
 
-const Closed = () => {
-  const [messages, setMessage] = useState(
-    [...Array(25)].map(() => originalMessage)
-  );
+const remove = (message) => {
+  const removeIndex = Math.floor(Math.random() * Math.floor(message.length));
+  return `${message.substr(0, removeIndex)}_${message.substr(removeIndex + 1)}`;
+};
+
+const Decay = () => {
+  const [message, setMessage] = useState(originalMessage);
+
+  const [heading, setHeading] = useState(originalHeading);
 
   useInterval(() => {
-    setMessage(corrupt(messages));
-  }, 10);
+    setHeading(corrupt(heading, originalHeading));
+  }, 1000);
 
-  return !isOpen() ? (
+  useInterval(() => {
+    setMessage(remove(message));
+  }, 1000);
+
+  return isOpen() ? (
     <>
-      <Helmet title={messages[messages.length - 1]} />
-      {messages.map((x, i) => <h1 className="title" key={`${i}${x}`}>{x}</h1>)} {/* eslint-disable-line */}
-      <h1>We are closed. Please come back later.</h1>
-      <h6>Normal website hours are 9 AM - 5 PM ET M-F.</h6>
+      <Helmet title={heading} />
+      <Template>
+        <ReactMarkdown source={message} escapeHtml={false} />
+      </Template>
     </>
   ) : (
-    <Redirect to="/" />
+    <></>
   );
 };
 
-export default Closed;
+export default Decay;
