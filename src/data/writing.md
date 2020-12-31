@@ -9,6 +9,6 @@ Convent of the Concepcionistas in Toledo, Castile-La Mancha, Spain. In light of 
 
 ## Independent Scholarship for The Drawing Center
 
-### [Ruth Asawa’s Early Watercolors: Revisiting the Visual Legacy of Japanese-American Concentration Camps](/pending-link)
+### [Ruth Asawa’s Early Watercolors: Revisiting the Visual Legacy of Japanese-American Concentration Camps](https://docs.google.com/document/d/1fYCOQYkZkE1K6pH4lIOi774ZPwXqZj6YKTlQGRWju0I/edit?usp=sharing)
 
 This paper highlights two early watercolors produced by Japanese-American artist Ruth Asawa while she and her family were incarcerated in the Rohwer Relocation Center in Arkansas during World War II. The ideas, themes, and formal characteristics expressed in these watercolors relate to a broader visual culture emergent in Japanese-American Concentration Camps, and help contextualize Ruth Asawa’s later work, both under the supervision of her mentors at Black Mountain College, and in her oeuvre of looped-wire sculpture.
