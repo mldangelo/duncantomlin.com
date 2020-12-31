@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import Template from '../components/template';
 
 const routes = [
   {
@@ -28,7 +27,7 @@ const Index = () => {
   };
 
   return (
-    <Template>
+    <>
       <h1 className="title">Which Reputation?</h1>
       <div className="field has-addons">
         <div className="control">
@@ -61,7 +60,7 @@ const Index = () => {
           </button>
         </div>
       </div>
-    </Template>
+    </>
   );
 };
 

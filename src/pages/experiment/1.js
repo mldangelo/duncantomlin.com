@@ -2,8 +2,7 @@ import React from 'react';
 
 import ReactMarkdown from 'react-markdown';
 
-import Template from '../../components/template';
-import isOpen from '../../components/experiments/1/isOpen';
+import isOpen from '../../components/experiments/1/IsOpen';
 import ClosingSoon from '../../components/experiments/1/closingSoon';
 
 const openMessage = `
@@ -24,14 +23,10 @@ const ClosedStudy = () =>
   isOpen() ? (
     <>
       <ClosingSoon />
-      <Template>
-        <ReactMarkdown source={openMessage} escapeHtml={false} />
-      </Template>
+      <ReactMarkdown source={openMessage} escapeHtml={false} />
     </>
   ) : (
-    <Template>
-      <ReactMarkdown source={closedMessage} escapeHtml={false} />
-    </Template>
+    <ReactMarkdown source={closedMessage} escapeHtml={false} />
   );
 
 export default ClosedStudy;

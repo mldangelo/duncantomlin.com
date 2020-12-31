@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 
-import Template from '../../components/template';
 import useInterval from '../../utils/useInterval';
 // replaces characters with underscores _
 const originalMessage = `
@@ -51,9 +50,7 @@ const Decay = () => {
   return (
     <>
       <Helmet title={heading} />
-      <Template>
-        <ReactMarkdown source={message} escapeHtml={false} />
-      </Template>
+      <ReactMarkdown source={message} escapeHtml={false} />
     </>
   );
 };

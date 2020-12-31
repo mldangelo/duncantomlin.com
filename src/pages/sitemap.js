@@ -1,10 +1,8 @@
 import path from 'path';
 import glob from 'glob';
 
-import Template from '../components/template';
-
 const StaticPage = ({ paths }) => (
-  <Template>
+  <>
     <h1>List of all rendered markdown files</h1>
     <ul>
       {paths.map((url) => (
@@ -15,24 +13,19 @@ const StaticPage = ({ paths }) => (
         </li>
       ))}
     </ul>
-  </Template>
+  </>
 );
 
 // This also gets called at build time
 export async function getStaticProps() {
-  const markdownMatches = glob
-    .sync(path.join(process.cwd(), 'content/**/*.md'))
-    .map((file) => file.replace('.md', '').split('content/')[1])
-    .filter((match) => !match.includes('README'));
-
-  const jsxMatches = glob
-    .sync(path.join(process.cwd(), 'src/pages/**/*.js'))
-    .map((file) => file.replace('.js', '').split('src/pages/')[1])
+  const pagesMatches = glob
+    .sync(path.join(process.cwd(), 'src/pages/**/*+(.js|.md|.mdx)'))
+    .map((file) => file.replace(/(.js|.mdx|.md)/gi, '').split('src/pages/')[1])
     .filter(
       (match) => match[0] !== '_' && match[0] !== '[' && match !== 'index'
     );
 
-  const matches = [...markdownMatches, ...jsxMatches, '/'].sort();
+  const matches = [...pagesMatches, '/'].sort();
   // Pass post data to the page via props
   return {
     props: { paths: matches },
