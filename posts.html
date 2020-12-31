@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><script>
+              var favicon_images = [
+                '/favicon/frame_00.png',
+                '/favicon/frame_01.png',
+                '/favicon/frame_02.png',
+                '/favicon/frame_03.png',
+                '/favicon/frame_04.png',
+                '/favicon/frame_05.png',
+                '/favicon/frame_06.png',
+                '/favicon/frame_07.png',
+                '/favicon/frame_08.png',
+                '/favicon/frame_09.png',
+                '/favicon/frame_10.png',
+                '/favicon/frame_11.png',
+                '/favicon/frame_12.png',
+                '/favicon/frame_13.png',
+                '/favicon/frame_14.png',
+                '/favicon/frame_15.png',
+              ];
+              var image_counter = 0; // To keep track of the current image
+              
+              setInterval(function() {
+                // remove current favicon
+                if(document.querySelector("link[rel='icon']") !== null)
+                document.querySelector("link[rel='icon']").remove();
+                if(document.querySelector("link[rel='shortcut icon']") !== null)
+                document.querySelector("link[rel='shortcut icon']").remove();
+              
+                // add new favicon image
+                document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
+                // If last image then goto first image
+                // Else go to next image    
+                if(image_counter == favicon_images.length -1) {
+                  image_counter = 0;
+                }
+                else {
+                  image_counter++;
+                }
+              }, 200);
+              </script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FN40R2YZXF"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FN40R2YZXF', {
+                page_path: window.location.pathname,
+              });
+            </script><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link rel="preload" href="/_next/static/css/06fb6aa948d442967e30.css" as="style"/><link rel="stylesheet" href="/_next/static/css/06fb6aa948d442967e30.css" data-n-g=""/><link rel="preload" href="/_next/static/css/8c3c3ade774abb6a4e19.css" as="style"/><link rel="stylesheet" href="/_next/static/css/8c3c3ade774abb6a4e19.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/main-ec3a435e175405c6d07b.js" as="script"/><link rel="preload" href="/_next/static/chunks/webpack-95c2b224bccf352ee870.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.ae3781fe50e43492a499.js" as="script"/><link rel="preload" href="/_next/static/chunks/ed6e1026.bbb99a9033920b4fc3df.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.70f393f909d3e7997244.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-41050a8008534a6ae306.js" as="script"/><link rel="preload" href="/_next/static/chunks/3261b3214a732adbdb78064a49956b3714ee6aba.e49b0867e145164fa015.js" as="script"/><link rel="preload" href="/_next/static/chunks/ceee9557559a7c5df8d222eccbdb78dba52f78c7.952da3b6050eeaff9ee8.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/%5B...slug%5D-54eefda9a10cf9ce5101.js" as="script"/></head><body><div id="__next"><nav class="navbar" role="navigation"><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Duncan Tomlin</a></div></div><div class="navbar-end"><a class="navbar-item" href="/contact">Contact</a></div></nav><section class="hero is-fullheight-with-navbar"><div class="hero-body"><div class="container content"><h1>Posts</h1><h2><a href="/posts/goodbye-2020">2020 - year in review</a> 2020-12-31</h2><p>2020 was a terrible year. Here are some reflections.</p><p><strong>NOTE</strong> We can update this path <code>/posts</code> later if you would like to support more advanced formatting.</p></div></div></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"markdown":"# Posts\n\n## [2020 - year in review](/posts/goodbye-2020) 2020-12-31\n\n2020 was a terrible year. Here are some reflections.\n\n**NOTE** We can update this path `/posts` later if you would like to support more advanced formatting.\n\n"},"__N_SSG":true},"page":"/[...slug]","query":{"slug":["posts"]},"buildId":"zN9YiB2gauaw6L6bg6TI_","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-d12def5b59e77778b929.js"></script><script src="/_next/static/chunks/main-ec3a435e175405c6d07b.js" async=""></script><script src="/_next/static/chunks/webpack-95c2b224bccf352ee870.js" async=""></script><script src="/_next/static/chunks/framework.ae3781fe50e43492a499.js" async=""></script><script src="/_next/static/chunks/ed6e1026.bbb99a9033920b4fc3df.js" async=""></script><script src="/_next/static/chunks/commons.70f393f909d3e7997244.js" async=""></script><script src="/_next/static/chunks/pages/_app-41050a8008534a6ae306.js" async=""></script><script src="/_next/static/chunks/3261b3214a732adbdb78064a49956b3714ee6aba.e49b0867e145164fa015.js" async=""></script><script src="/_next/static/chunks/ceee9557559a7c5df8d222eccbdb78dba52f78c7.952da3b6050eeaff9ee8.js" async=""></script><script src="/_next/static/chunks/pages/%5B...slug%5D-54eefda9a10cf9ce5101.js" async=""></script><script src="/_next/static/zN9YiB2gauaw6L6bg6TI_/_buildManifest.js" async=""></script><script src="/_next/static/zN9YiB2gauaw6L6bg6TI_/_ssgManifest.js" async=""></script></body></html>
