@@ -13,23 +13,23 @@ const StaticPage = ({ markdown }) => (
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  const files = glob.sync(path.join(process.cwd(), 'src/data/*.md'));
+  const files = glob.sync(path.join(process.cwd(), 'content/**/*.md'));
   // less stable than regex. regex was not working for every route. fix later
-  const matches = files.map(
-    (file) => file.replace('.md', '').split('src/data/')[1]
-  );
+  const matches = files
+    .map((file) => file.replace('.md', '').split('content/')[1])
+    .filter((match) => !match.includes('README'));
 
   return {
-    paths: matches.map((slug) => ({ params: { slug } })),
+    paths: matches.map((slug) => ({ params: { slug: slug.split('/') } })),
     fallback: false,
   };
 }
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  const { slug = '' } = params;
+  const { slug = [] } = params;
   const data = fs.readFileSync(
-    path.join(process.cwd(), `src/data/${slug}.md`),
+    path.join(process.cwd(), `content/${slug.join('/')}.md`),
     'utf-8'
   );
 
