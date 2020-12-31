@@ -20,7 +20,6 @@
     "react-helmet": "^6.1.0",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
-    "to-zalgo": "^1.0.1",
     "webpack": "^4.44.2"
   },
   "scripts": {
