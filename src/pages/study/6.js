@@ -34,7 +34,8 @@ const insideMessage = `
 
 You have gained entry. All amenities are temporarily postponed.
 
-Please consider [making a donation](https://venmo.com/duncan-tomlin). Come back soon.
+Please consider [making a donation](https://venmo.com/duncan-tomlin) or
+[leaving a review](https://docs.google.com/document/d/1tV3zmoQa5vuDwiI2EVWbPi03CO-Vp4m8L3joQN3oMzg/edit?usp=sharing). Come back soon.
 `;
 
 const message = (minutesRemaining) =>
