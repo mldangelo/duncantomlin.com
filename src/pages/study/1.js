@@ -2,8 +2,8 @@ import React from 'react';
 
 import ReactMarkdown from 'react-markdown';
 
-import isOpen from '../../components/experiments/isOpen';
-import ClosingSoon from '../../components/experiments/ClosingSoon';
+import isOpen from '../../components/studies/isOpen';
+import ClosingSoon from '../../components/studies/ClosingSoon';
 
 const openMessage = `
 # Welcome to a webpage with business hours.
