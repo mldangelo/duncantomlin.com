@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 
-import useInterval from '../../../utils/useInterval';
+import useInterval from '../../utils/useInterval';
 
 const timeToClose = () => {
   const utcClosingHour = 21; // 5 PM EST
