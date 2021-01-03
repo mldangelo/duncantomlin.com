@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 
 const routes = [
   {
@@ -41,6 +42,10 @@ const Index = () => {
 
   return (
     <>
+      <NextSeo
+        title="Duncan Tomlin"
+        description="New York based curatorial researcher and art historian. Elaborate metaphors; whimsical idealism; art historical perspectives; sweet little barrels; aspirational kickflips."
+      />
       <h1 className="title">In what context do you know Duncan?</h1>
       <div className="field has-addons">
         <div className="control">
