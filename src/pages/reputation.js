@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 
 const routes = [
@@ -12,7 +12,7 @@ const routes = [
   },
   {
     label: 'Action Sports',
-    href: '/reputation/action-sites',
+    href: '/reputation/action-sports',
   },
 ];
 
@@ -20,9 +20,7 @@ const Index = () => {
   // const history = useHistory();
   const router = useRouter();
 
-  const [value, setSelected] = useState({});
-
-  const handleClick = () => {
+  const handleClick = (value) => {
     router.push(value?.href || '/');
   };
 
@@ -35,7 +33,7 @@ const Index = () => {
             <select
               name="context"
               onChange={(e) =>
-                setSelected(
+                handleClick(
                   routes.find(({ label }) => label === e.target.value)
                 )
               }
@@ -48,16 +46,6 @@ const Index = () => {
               ))}
             </select>
           </div>
-        </div>
-        <div className="control">
-          <button
-            type="button"
-            className="button is-link is-medium"
-            disabled={!value?.href}
-            onClick={() => handleClick()}
-          >
-            Go
-          </button>
         </div>
       </div>
     </>

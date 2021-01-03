@@ -18,7 +18,7 @@ const routes = [
   },
   {
     label: 'As his reputation precedes him',
-    href: '/which-reputation',
+    href: '/reputation',
   },
   {
     label: 'Romantic',
