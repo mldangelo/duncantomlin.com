@@ -127,10 +127,10 @@ const initCanvas = async () => {
 const message = `
 # Social Distancing on the Web
 
-The problem with so much social engagement prior to covid is that everyone wanted to be in the same few places.
+The problem with social engagement prior to covid is that everyone wanted to be in the same few places.
 Social Distancing is naturally hard because each of us doesn't have a unique idea about where to go. The same 
 places appeal to us all for similar reasons.
-Incidentally we now find ourselves similarly clustering like so many flies on the internet's cow pies, in light of which, we 
+Incidentally, we now find ourselves similarly clustering like so many flies on the internet's cow pies, in light of which, we 
 must now distance ourselves from one another physically, albeit in a virtual realm.
 
 We all try, but we can't always stay away.
