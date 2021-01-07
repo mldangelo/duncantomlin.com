@@ -2,7 +2,7 @@
 
 ## The Courtauld Institute of Art MA History of Art Dissertation
 
-### [Life After Death: The Chapel of San Jerónimo in Toledo](/pending-link)
+### [Life After Death: The Chapel of San Jerónimo in Toledo](https://docs.google.com/document/d/1i688jt-W0QcG9Ev_Eq8S499TUw3Qz4-DPFs-d_0tYHo/edit?usp=sharing)
 
 This paper discusses the formal characteristics of the Chapel of San Jerónimo within the 
 Convent of the Concepcionistas in Toledo, Castile-La Mancha, Spain. In light of its remarkably heterogeneous program of ornamentation, including references to visual traditions that span the multicultural, multiconfessional history of the Iberian Peninsula, the chapel’s design merits consideration, firstly, as a unique contribution to the canon of Castilian mudéjar architecture, and secondly, viewed through the lens of its patron’s identity and personal history, as a portal into the sociological underpinnings of fifteenth-century Spanish material culture.
