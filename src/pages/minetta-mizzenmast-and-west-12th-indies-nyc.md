@@ -8,6 +8,6 @@ Surfing memorabilia, carpeted floors and the way-laid-back staff can bring a lit
 
 Read reviews, check opening hours, or book a reservation on [Google Maps](https://goo.gl/maps/sk25PjJactrz9LMX9), or read about us in [New York Times](https://www.nytimes.com/reviews/dining).
 
-## West 12th Indices
+## West 12th Indies
 
 Opening Spring 2021. More information coming soon.
