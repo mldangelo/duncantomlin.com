@@ -7,11 +7,24 @@
   $input-shadow: none,
   $progress-border-radius: 0,
   $family-primary: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-  $family-secondary: '"Space Grotesk", "Inter", sans-serif'
+  $family-secondary: '"Space Grotesk", "Inter", sans-serif',
+  $link: hsl(229, 53%, 53%)
 );
 
 // Import modern fonts - Inter for body, Space Grotesk for headings
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+// ============================================
+// Design Tokens
+// ============================================
+$primary-color: hsl(229, 53%, 53%);
+$primary-hover: hsl(229, 53%, 43%);
+$primary-light: hsl(229, 53%, 96%);
+$text-color: hsl(0, 0%, 20%);
+$text-muted: hsl(0, 0%, 45%);
+$transition-fast: 0.15s ease;
+$transition-normal: 0.2s ease;
+$border-radius: 4px;
 
 // ============================================
 // Custom Styles
@@ -24,6 +37,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   letter-spacing: -0.011em;
+  color: $text-color;
 }
 
 // Navigation - Keep horizontal on all screen sizes
@@ -31,8 +45,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   min-height: 3.25rem;
+  border-bottom: 1px solid hsl(0, 0%, 92%);
 
   .navbar-brand {
     display: flex;
@@ -60,10 +75,23 @@ body {
   }
 
   .navbar-item {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: $border-radius;
+    transition: background-color $transition-fast, color $transition-fast;
+    font-weight: 500;
+
+    &:hover:not(.is-active) {
+      background-color: $primary-light;
+      color: $primary-color;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
 
     &.is-active {
-      background-color: hsl(229, 53%, 53%);
+      background-color: $primary-color;
       color: white;
     }
   }
@@ -130,4 +158,81 @@ body {
   .title {
     font-size: 1.75rem;
   }
+}
+
+// ============================================
+// Form Elements
+// ============================================
+
+// Enhanced select/dropdown styling
+.select {
+  &.is-link select,
+  select {
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: $border-radius;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
+      outline: none;
+    }
+  }
+
+  &.is-medium select {
+    font-size: 1.125rem;
+    padding: 0.625rem 2.5rem 0.625rem 1rem;
+  }
+}
+
+// Better button styling
+.button {
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: $border-radius;
+  transition: all $transition-fast;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+// ============================================
+// Accessibility
+// ============================================
+
+// Focus visible for all interactive elements
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// ============================================
+// Utility Classes
+// ============================================
+
+.text-muted {
+  color: $text-muted;
 }
