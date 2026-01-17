@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+// Import Bulma first (v1.x requires @use before other rules)
+@use "bulma/sass" with (
+  $control-border-width: 2px,
+  $input-border-color: transparent,
+  $input-shadow: none,
+  $progress-border-radius: 0
+);
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
