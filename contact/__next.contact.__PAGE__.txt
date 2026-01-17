@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[55733,["/_next/static/chunks/61ff83bf48f4bdf8.js","/_next/static/chunks/9d4cbed894dcb94e.js"],"default"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7738b2b176cf8288.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"DDIxtBYl6Dp6J8w3FNzM6","rsc":["$","$1","c",{"children":[[["$","h1",null,{"children":"There are several ways in which you can contact me"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":["Email me at ",["$","$L2",null,{}],"."]}],"\n",["$","li",null,{"children":["Leave a yellow post-it note on the back of the Do Not Walk sign located at ",["$","a",null,{"href":"https://www.google.com/maps/place/40%C2%B043'48.1%22N+74%C2%B000'07.4%22W/","children":"40.730023,-74.0020462"}]," on the third tuesday of odd numbered months."]}],"\n",["$","li",null,{"children":"Paddle out at beach 67th, Rockaway and see who snakes you."}],"\n"]}]],[["$","script","script-0",{"src":"/_next/static/chunks/9d4cbed894dcb94e.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

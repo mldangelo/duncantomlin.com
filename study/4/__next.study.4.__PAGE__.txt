@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7738b2b176cf8288.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"buildId":"DDIxtBYl6Dp6J8w3FNzM6","rsc":["$","$1","c",{"children":[[["$","h1",null,{"children":"Sorry, this page only allows one visitor at a time."}],"\n",["$","p",null,{"children":["Due to government-mandated social distancing restrictions, we are required to limit interior capacity.\nPlease refresh the page to check availability or wait ",["$","a",null,{"href":"/studies","children":"outside"}],"."]}]],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
+4:null
