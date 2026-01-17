@@ -5,8 +5,102 @@
   $control-border-width: 2px,
   $input-border-color: transparent,
   $input-shadow: none,
-  $progress-border-radius: 0
+  $progress-border-radius: 0,
+  $family-primary: '"Lora", Georgia, serif'
 );
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+// ============================================
+// Custom Styles
+// ============================================
+
+// Typography
+body {
+  font-family: 'Lora', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Navigation - Keep horizontal on all screen sizes
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  min-height: 3.25rem;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .navbar-menu {
+    display: flex !important;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-shadow: none;
+    padding: 0;
+
+    &.is-active {
+      display: flex !important;
+    }
+  }
+
+  .navbar-end {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .navbar-item {
+    padding: 0.5rem 0.75rem;
+
+    &.is-active {
+      background-color: hsl(229, 53%, 53%);
+      color: white;
+    }
+  }
+}
+
+// Content improvements
+.content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  // Better link styling
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+// Hero section adjustments for mobile
+.hero.is-fullheight-with-navbar {
+  .hero-body {
+    padding: 1.5rem;
+
+    @media screen and (min-width: 769px) {
+      padding: 3rem 1.5rem;
+    }
+  }
+}
+
+// Mobile-specific improvements
+@media screen and (max-width: 768px) {
+  .container.content {
+    padding: 0 0.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+}
