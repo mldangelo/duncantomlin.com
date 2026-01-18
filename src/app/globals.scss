@@ -1,53 +1,123 @@
 @charset "utf-8";
 
-// Import Bulma first (v1.x requires @use before other rules)
+// ============================================
+// Bulma Configuration - Force Light Mode
+// ============================================
 @use "bulma/sass" with (
-  $control-border-width: 2px,
-  $input-border-color: transparent,
+  $scheme-main: hsl(0, 0%, 100%),
+  $scheme-main-bis: hsl(220, 20%, 98%),
+  $scheme-main-ter: hsl(220, 15%, 96%),
+  $background: hsl(220, 20%, 98%),
+  $text: hsl(220, 15%, 20%),
+  $text-strong: hsl(220, 20%, 10%),
+  $control-border-width: 1px,
+  $input-border-color: hsl(220, 15%, 85%),
   $input-shadow: none,
   $progress-border-radius: 0,
   $family-primary: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
   $family-secondary: '"Space Grotesk", "Inter", sans-serif',
-  $link: hsl(229, 53%, 53%)
+  $link: hsl(220, 70%, 50%),
+  $primary: hsl(220, 70%, 50%),
+  $radius: 8px,
+  $radius-small: 4px,
+  $radius-medium: 8px,
+  $radius-large: 12px
 );
 
-// Import modern fonts - Inter for body, Space Grotesk for headings
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+// Import modern fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 // ============================================
 // Design Tokens
 // ============================================
-$primary-color: hsl(229, 53%, 53%);
-$primary-hover: hsl(229, 53%, 43%);
-$primary-light: hsl(229, 53%, 96%);
-$text-color: hsl(0, 0%, 20%);
-$text-muted: hsl(0, 0%, 45%);
-$transition-fast: 0.15s ease;
-$transition-normal: 0.2s ease;
-$border-radius: 4px;
+
+// Colors - Refined palette
+$primary: hsl(220, 70%, 50%);
+$primary-dark: hsl(220, 70%, 40%);
+$primary-light: hsl(220, 70%, 96%);
+$primary-subtle: hsl(220, 60%, 98%);
+
+$text-primary: hsl(220, 20%, 15%);
+$text-secondary: hsl(220, 10%, 40%);
+$text-muted: hsl(220, 10%, 55%);
+
+$surface: hsl(0, 0%, 100%);
+$surface-raised: hsl(0, 0%, 100%);
+$surface-subtle: hsl(220, 20%, 98%);
+$border-color: hsl(220, 15%, 90%);
+$border-subtle: hsl(220, 15%, 94%);
+
+// Spacing scale
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+$space-3xl: 4rem;
+
+// Typography scale
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 2rem;
+$text-4xl: 2.5rem;
+
+// Effects
+$transition-fast: 150ms ease;
+$transition-normal: 200ms ease;
+$transition-slow: 300ms ease;
+$shadow-sm: 0 1px 2px hsla(220, 20%, 20%, 0.05);
+$shadow-md: 0 4px 6px -1px hsla(220, 20%, 20%, 0.07), 0 2px 4px -1px hsla(220, 20%, 20%, 0.04);
+$shadow-lg: 0 10px 15px -3px hsla(220, 20%, 20%, 0.08), 0 4px 6px -2px hsla(220, 20%, 20%, 0.04);
+$radius: 8px;
+$radius-sm: 4px;
+$radius-lg: 12px;
 
 // ============================================
-// Custom Styles
+// Base Styles
 // ============================================
 
-// Typography
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   letter-spacing: -0.011em;
-  color: $text-color;
+  color: $text-primary;
+  background-color: $surface;
+  line-height: 1.6;
 }
 
-// Navigation - Keep horizontal on all screen sizes
+// ============================================
+// Navigation
+// ============================================
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.25rem;
-  min-height: 3.25rem;
-  border-bottom: 1px solid hsl(0, 0%, 92%);
+  padding: $space-md $space-lg;
+  min-height: 4rem;
+  background: $surface;
+  border-bottom: 1px solid $border-subtle;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background: hsla(0, 0%, 100%, 0.9);
+
+  @media screen and (min-width: 769px) {
+    padding: $space-md $space-xl;
+  }
 
   .navbar-brand {
     display: flex;
@@ -62,6 +132,7 @@ body {
     flex-shrink: 0;
     box-shadow: none;
     padding: 0;
+    background: transparent;
 
     &.is-active {
       display: flex !important;
@@ -71,162 +142,326 @@ body {
   .navbar-end {
     display: flex;
     align-items: center;
+    gap: $space-xs;
     margin-left: auto;
   }
 
   .navbar-item {
-    padding: 0.5rem 0.875rem;
-    border-radius: $border-radius;
-    transition: background-color $transition-fast, color $transition-fast;
+    padding: $space-sm $space-md;
+    border-radius: $radius;
+    transition: all $transition-fast;
     font-weight: 500;
+    font-size: $text-sm;
+    color: $text-secondary;
+    text-decoration: none;
+    background: transparent;
 
     &:hover:not(.is-active) {
-      background-color: $primary-light;
-      color: $primary-color;
+      background: $primary-subtle;
+      color: $primary;
     }
 
     &:focus-visible {
-      outline: 2px solid $primary-color;
+      outline: 2px solid $primary;
       outline-offset: 2px;
     }
 
     &.is-active {
-      background-color: $primary-color;
+      background: $primary;
       color: white;
+      font-weight: 600;
+    }
+
+    // Brand name styling
+    &:first-child {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: $text-base;
+      letter-spacing: -0.02em;
+      color: $text-primary;
+      padding-left: 0;
+
+      &:hover:not(.is-active) {
+        background: transparent;
+        color: $primary;
+      }
+
+      &.is-active {
+        background: transparent;
+        color: $text-primary;
+      }
     }
   }
 }
 
-// Content improvements
+// ============================================
+// Main Content Area
+// ============================================
+
+.main-content {
+  background: linear-gradient(180deg, $surface-subtle 0%, $surface 100%);
+  min-height: calc(100vh - 4rem - 5rem); // navbar + footer
+  padding: $space-xl $space-lg;
+
+  @media screen and (min-width: 769px) {
+    padding: $space-3xl $space-xl;
+  }
+
+  .container {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+}
+
+// Legacy hero support
+.hero.is-fullheight-with-navbar {
+  background: linear-gradient(180deg, $surface-subtle 0%, $surface 100%);
+  min-height: calc(100vh - 4rem);
+
+  .hero-body {
+    padding: $space-xl $space-lg;
+    align-items: flex-start;
+
+    @media screen and (min-width: 769px) {
+      padding: $space-3xl $space-xl;
+    }
+  }
+}
+
+// ============================================
+// Typography & Content
+// ============================================
+
 .content {
+  max-width: 42rem;
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    color: $text-primary;
+    margin-top: $space-xl;
+    margin-bottom: $space-md;
   }
 
   h1 {
+    font-size: $text-4xl;
     font-weight: 700;
+    line-height: 1.15;
+    margin-top: 0;
+    margin-bottom: $space-lg;
+
+    @media screen and (max-width: 768px) {
+      font-size: $text-3xl;
+    }
   }
 
-  // Better link styling
+  h2 {
+    font-size: $text-2xl;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: $text-xl;
+    line-height: 1.35;
+  }
+
+  p {
+    line-height: 1.75;
+    color: $text-secondary;
+    margin-bottom: $space-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   a {
-    text-decoration-thickness: 1px;
+    color: $primary;
+    text-decoration: underline;
+    text-decoration-color: hsla(220, 70%, 50%, 0.3);
     text-underline-offset: 3px;
-    transition: text-decoration-thickness 0.15s ease;
+    text-decoration-thickness: 1px;
+    transition: all $transition-fast;
 
     &:hover {
+      color: $primary-dark;
+      text-decoration-color: $primary-dark;
       text-decoration-thickness: 2px;
     }
   }
 
-  // Better paragraph spacing
-  p {
-    line-height: 1.7;
-  }
-
-  // List improvements
   ul, ol {
-    line-height: 1.6;
+    line-height: 1.7;
+    color: $text-secondary;
+    margin-bottom: $space-md;
+    padding-left: $space-lg;
+
+    li {
+      margin-bottom: $space-xs;
+
+      &::marker {
+        color: $text-muted;
+      }
+    }
   }
-}
 
-// Title class (used on many pages)
-.title {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
+  // Embedded content (like Google Docs iframe)
+  iframe {
+    border-radius: $radius-lg;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-md;
+    margin: $space-lg 0;
+  }
 
-// Hero section adjustments for mobile
-.hero.is-fullheight-with-navbar {
-  .hero-body {
-    padding: 1.5rem;
+  // Code blocks
+  code {
+    background: $surface-subtle;
+    padding: 0.2em 0.4em;
+    border-radius: $radius-sm;
+    font-size: 0.9em;
+  }
 
-    @media screen and (min-width: 769px) {
-      padding: 3rem 1.5rem;
+  pre {
+    background: $surface-subtle;
+    border-radius: $radius;
+    padding: $space-md;
+    overflow-x: auto;
+
+    code {
+      background: transparent;
+      padding: 0;
     }
   }
 }
 
-// Mobile-specific improvements
-@media screen and (max-width: 768px) {
-  .container.content {
-    padding: 0 0.5rem;
-  }
+.title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: $text-primary;
+}
 
-  .title {
-    font-size: 1.75rem;
-  }
+.subtitle {
+  color: $text-secondary;
+  font-weight: 400;
 }
 
 // ============================================
 // Form Elements
 // ============================================
 
-// Enhanced select/dropdown styling
 .select {
   &.is-link select,
   select {
     font-family: inherit;
-    font-size: 1rem;
-    border-radius: $border-radius;
-    transition: border-color $transition-fast, box-shadow $transition-fast;
+    font-size: $text-base;
+    font-weight: 500;
+    border-radius: $radius;
+    border: 1px solid $border-color;
+    background: $surface;
+    color: $text-primary;
+    padding: $space-sm $space-xl $space-sm $space-md;
+    transition: all $transition-fast;
     cursor: pointer;
+    min-width: 200px;
 
     &:hover {
-      border-color: $primary-color;
+      border-color: $primary;
     }
 
     &:focus {
-      border-color: $primary-color;
-      box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
+      border-color: $primary;
+      box-shadow: 0 0 0 3px hsla(220, 70%, 50%, 0.12);
       outline: none;
     }
   }
 
+  &::after {
+    border-color: $text-muted;
+  }
+
   &.is-medium select {
-    font-size: 1.125rem;
-    padding: 0.625rem 2.5rem 0.625rem 1rem;
+    font-size: $text-lg;
+    padding: $space-md $space-2xl $space-md $space-md;
+  }
+
+  // Full-width select for homepage
+  &.is-fullwidth {
+    width: 100%;
+    max-width: 400px;
+
+    select {
+      width: 100%;
+    }
   }
 }
 
-// Better button styling
+.input,
+.textarea {
+  font-family: inherit;
+  border-radius: $radius;
+  border: 1px solid $border-color;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: hsl(220, 15%, 80%);
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px hsla(220, 70%, 50%, 0.12);
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
 .button {
   font-family: inherit;
   font-weight: 500;
-  border-radius: $border-radius;
+  border-radius: $radius;
   transition: all $transition-fast;
+  padding: $space-sm $space-md;
+
+  &.is-primary {
+    background: $primary;
+
+    &:hover {
+      background: $primary-dark;
+    }
+  }
 
   &:focus-visible {
-    outline: 2px solid $primary-color;
+    outline: 2px solid $primary;
     outline-offset: 2px;
   }
 }
 
 // ============================================
-// Accessibility
+// Cards & Surfaces
 // ============================================
 
-// Focus visible for all interactive elements
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid $primary-color;
-  outline-offset: 2px;
+.card {
+  background: $surface-raised;
+  border-radius: $radius-lg;
+  border: 1px solid $border-subtle;
+  box-shadow: $shadow-sm;
+  transition: all $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    border-color: $border-color;
+  }
 }
 
-// Reduced motion preference
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.box {
+  background: $surface-raised;
+  border-radius: $radius-lg;
+  border: 1px solid $border-subtle;
+  box-shadow: $shadow-sm;
+  padding: $space-lg;
 }
 
 // ============================================
@@ -235,4 +470,167 @@ textarea:focus-visible {
 
 .text-muted {
   color: $text-muted;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-primary {
+  color: $text-primary;
+}
+
+.surface-subtle {
+  background: $surface-subtle;
+}
+
+// ============================================
+// Mobile Adjustments
+// ============================================
+
+@media screen and (max-width: 768px) {
+  .container.content {
+    padding: 0 $space-md;
+  }
+
+  .navbar {
+    padding: $space-sm $space-md;
+
+    .navbar-item {
+      padding: $space-xs $space-sm;
+      font-size: $text-sm;
+
+      &:first-child {
+        font-size: $text-sm;
+      }
+    }
+  }
+}
+
+// ============================================
+// Accessibility
+// ============================================
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// ============================================
+// Footer
+// ============================================
+
+.footer {
+  background: $surface-subtle;
+  border-top: 1px solid $border-subtle;
+  padding: $space-lg $space-lg;
+
+  @media screen and (min-width: 769px) {
+    padding: $space-xl $space-xl;
+  }
+}
+
+.footer-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+
+  @media screen and (min-width: 769px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.footer-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: $text-base;
+  color: $text-primary;
+  letter-spacing: -0.02em;
+}
+
+.footer-role {
+  font-size: $text-sm;
+  color: $text-muted;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+
+  @media screen and (min-width: 769px) {
+    align-items: flex-end;
+  }
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+
+  a {
+    font-size: $text-sm;
+    color: $text-secondary;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.footer-copyright {
+  font-size: $text-xs;
+  color: $text-muted;
+}
+
+// ============================================
+// Print Styles
+// ============================================
+
+@media print {
+  .navbar,
+  .footer {
+    display: none;
+  }
+
+  .main-content,
+  .hero {
+    min-height: auto;
+    background: white;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
 }
