@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import AnimatedFavicon from '@/components/AnimatedFavicon';
 import './globals.scss';
@@ -7,7 +8,7 @@ import './globals.scss';
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#485fc7',
+  themeColor: '#2563eb',
 };
 
 export const metadata: Metadata = {
@@ -39,11 +40,10 @@ export default function RootLayout({
       </head>
       <body>
         <Navigation />
-        <section className="hero is-fullheight-with-navbar">
-          <div className="hero-body">
-            <div className="container content">{children}</div>
-          </div>
-        </section>
+        <main className="main-content">
+          <div className="container content">{children}</div>
+        </main>
+        <Footer />
       </body>
     </html>
   );
